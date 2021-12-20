@@ -1,56 +1,305 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@samanthreddy1257 
+samanthreddy1257
+/
+Task_LInux
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Task_LInux/pom.xml
+@samanthreddy1257
+samanthreddy1257 Update pom.xml
+Latest commit 79a5e4c 11 minutes ago
+ History
+ 1 contributor
+275 lines (262 sloc)  8.06 KB
+   
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-.....
-.....
 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-<properties>        
-    <defaultSuiteFiles>
-        ./Sets/Suits/CMS_Administration_SiteBackup_029.xml,
-    </defaultSuiteFiles>
-    <suiteFile>${defaultSuiteFiles}</suiteFile>
+  <groupId>org.example</groupId>
+  <artifactId>MySecondDemo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
+  <name>MySecondDemo</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <properties>
+ <maven.compiler.source>1.8</maven.compiler.source>
+ <maven.compiler.target>1.8</maven.compiler.target>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <java.home>/usr/bin/java/bin/javac</java.home>
+ 
 </properties>
 
-<profiles>
-    <profile>
-        <id>Base configuration</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <build>
-            <defaultGoal>install</defaultGoal>
-            <plugins>                    
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.19.1</version>
-                    <inherited>true</inherited>
-                    <executions>
-                        <execution>
-                            <phase>test</phase>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <suiteXmlFiles>
-                            <suiteXmlFile>${suiteFile}</suiteXmlFile>
-                        </suiteXmlFiles>                            
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
-</profiles>
-<dependencies>
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>3.3.1</version>
-    </dependency>
+    
+
+<dependencies> 
+  <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+<dependency>  
+<groupId>junit</groupId>  
+<artifactId>junit</artifactId>  
+<version>3.8.1</version>  
+<scope>test</scope>  
+</dependency>  
+<dependency>  
+<groupId>org.testng</groupId>  
+<artifactId>testng</artifactId>  
+<version>6.8</version>  
+<scope>compile</scope>  
+</dependency>  
+<dependency>  
+<groupId>com.google.inject</groupId>  
+<artifactId>guice</artifactId>  
+<version>4.1.0</version>  
+<classifier>no_aop</classifier>  
+</dependency>  
+<dependency>  
+<groupId>org.seleniumhq.selenium</groupId>  
+<artifactId>selenium-java</artifactId>  
+<version>3.141.59</version>  
+</dependency>  
+<dependency>  
+<groupId>org.seleniumhq.selenium</groupId>  
+<artifactId>selenium-chrome-driver</artifactId>  
+<version>2.50.0</version>  
+</dependency> 
+	<dependency>
+<groupId>org.apache.commons</groupId>
+<artifactId>commons-jexl</artifactId>
+<version>2.1.1</version>
+</dependency>
+	<dependency>
+<groupId>org.apache.commons</groupId>
+<artifactId>commons-jexl</artifactId>
+<version>2.1.1</version>
+</dependency>
+	
+<dependency>  
+<groupId>com.google.guava</groupId>  
+<artifactId>guava</artifactId>  
+<version>22.0</version>  
+</dependency>  
+<dependency>  
+<groupId>com.google.api-client</groupId>  
+<artifactId>google-api-client-appengine</artifactId>  
+<version>1.23.0</version>  
+<exclusions>  
+<exclusion>  
+<groupId>com.google.guava</groupId>  
+<artifactId>guava-jdk5</artifactId>  
+</exclusion>  
+</exclusions>  
+</dependency>  
+<dependency>  
+<groupId>com.google.code.gson</groupId>  
+<artifactId>gson</artifactId>  
+<version>2.2.4</version>  
+</dependency>  
 </dependencies>
+  <build>  
+<plugins>  
+<plugin>  
+<groupId>org.apache.maven.plugins</groupId>  
+<artifactId>maven-compiler-plugin</artifactId>  
+<version>3.1</version>  
+<configuration>  
+<source>1.8</source>  
+<target>1.8</target>  
+</configuration>  
+</plugin>  
+<plugin>  
+<groupId>org.apache.maven.plugins</groupId>  
+<artifactId>maven-surefire-plugin</artifactId>  
+<version>2.19.1</version>  
+<configuration>  
+<suiteXmlFiles>  
+<suiteXmlFile>\home\ec2-user\testng.xml</suiteXmlFile>  
+</suiteXmlFiles>  
+</configuration>  
+</plugin>  
+<plugin>  
+<groupId>org.apache.maven.plugins</groupId>  
+<artifactId>maven-source-plugin</artifactId>  
+<executions>  
+<execution>  
+<id>attach-sources</id>  
+<goals>  
+<goal>jar</goal>  
+</goals>  
+</execution>  
+</executions>  
+</plugin> 
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+
+<configuration>
+<source>1.8</source>
+<target>1.8</target>
+</configuration>
+</plugin> 
+<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.5.1</version>
+                <configuration>
+                      <verbose>true</verbose>
+                      <fork>true</fork>
+                      <executable>${java.home}</executable>
+                   <compilerVersion>1.8</compilerVersion>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                 </configuration>
+             </plugin> 
+  <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+	<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-site-plugin</artifactId>
+    <version>3.0</version>
+    <configuration>
+        <!-- configuration of reports to be included in site -->
+        <reportPlugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+            <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+            <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+            <overview>${basedir}\src\main\java\overview.html</overview>
+            <verbose>true</verbose>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.6</version>
+    </plugin>
+    <!-- http://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.13</version>
+    </plugin>
+        </reportPlugins>
+    </configuration>
+</plugin>
+	<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.19.1</version>
+    <configuration>
+        <testFailureIgnore>true</testFailureIgnore>
+    </configuration>
+</plugin>
+	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.5.1</version>
+                <configuration>
+                      <verbose>true</verbose>
+                      <fork>true</fork>
+                      <executable>${java.home}</executable>
+                   <compilerVersion>1.8</compilerVersion>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                 </configuration>
+             </plugin>
+	<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+</configuration>
+</plugin>
+
+</plugins>  
+	  <build>
+            <configuration>
+                <verbose>false</verbose>
+                <fork>true</fork>
+                <executable>${JAVA_1_6_HOME}/bin/javac</executable>
+                <compilerVersion>1.6</compilerVersion>
+                <meminitial>256m</meminitial>
+                <source>1.6</source>
+                <target>1.6</target>
+                <!--encoding>UTF-8</encoding-->
+                <maxmem>512m</maxmem>
+            </configuration>
+</build>
+</build> 
+	<parent>
+    <groupId>com.example</groupId>
+    <artifactId>example-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../name-of-folder-containing-parent-pom</relativePath>
+</parent>
+          
 </project>
+

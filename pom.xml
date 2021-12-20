@@ -64,7 +64,18 @@
 <groupId>org.seleniumhq.selenium</groupId>  
 <artifactId>selenium-chrome-driver</artifactId>  
 <version>2.50.0</version>  
-</dependency>  
+</dependency> 
+	<dependency>
+<groupId>org.apache.commons</groupId>
+<artifactId>commons-jexl</artifactId>
+<version>2.1.1</version>
+</dependency>
+	<dependency>
+<groupId>org.apache.commons</groupId>
+<artifactId>commons-jexl</artifactId>
+<version>2.1.1</version>
+</dependency>
+	
 <dependency>  
 <groupId>com.google.guava</groupId>  
 <artifactId>guava</artifactId>  
@@ -254,5 +265,11 @@
             </configuration>
 </build>
 </build> 
+	<parent>
+    <groupId>com.example</groupId>
+    <artifactId>example-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../name-of-folder-containing-parent-pom</relativePath>
+</parent>
           
 </project>

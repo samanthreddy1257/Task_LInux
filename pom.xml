@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@samanthreddy1257 
-samanthreddy1257
-/
-Task_LInux
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Task_LInux/pom.xml
-@samanthreddy1257
-samanthreddy1257 Update pom.xml
-Latest commit 79a5e4c 11 minutes ago
- History
- 1 contributor
-275 lines (262 sloc)  8.06 KB
-   
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

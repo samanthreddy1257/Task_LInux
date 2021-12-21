@@ -70,6 +70,11 @@
       <version>20131018</version>
       <scope>compile</scope>
     </dependency>
+	  <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>1.0.3</version>
+        </dependency>
     <dependency>
       <groupId>commons-httpclient</groupId>
       <artifactId>commons-httpclient</artifactId>

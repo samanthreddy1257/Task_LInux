@@ -251,19 +251,39 @@
 </plugin>
 
 </plugins>  
-	  <build>
+	  /*<build>
             <configuration>
                 <verbose>false</verbose>
                 <fork>true</fork>
-                <executable>${JAVA_1_6_HOME}/bin/javac</executable>
-                <compilerVersion>1.6</compilerVersion>
+                <executable>${JAVA_1_8_HOME}/bin/javac</executable>
+                <compilerVersion>1.8</compilerVersion>
                 <meminitial>256m</meminitial>
-                <source>1.6</source>
-                <target>1.6</target>
+                <source>1.8</source>
+                <target>1.8</target>
                 <!--encoding>UTF-8</encoding-->
                 <maxmem>512m</maxmem>
             </configuration>
-</build>
+</build>*/
+	  
+	  <build>
+        <pluginManagement>
+        <plugins>
+            <plugin>
+            <groupId> ----- </groupId>
+            <artifactId>maven-jar-plugin</artifactId> (check your plugin ) 
+            <version>3.0.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <mainClass> ------ </mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            </plugin>
+        </plugins>
+        </pluginManagement>
+    </build>
 </build> 
 	<parent>
     <groupId>com.example</groupId>

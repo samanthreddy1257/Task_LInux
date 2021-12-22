@@ -31,12 +31,25 @@
 			<version>3.5.3</version>
 		</dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
+		<build>
+        <pluginManagement>
+        <plugins>
+            <plugin>
+            <groupId> ----- </groupId>
+            <artifactId>maven-jar-plugin</artifactId> (check your plugin ) 
+            <version>3.0.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <mainClass> ------ </mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            </plugin>
+        </plugins>
+        </pluginManagement>
+    </build>
 <dependency>  
 <groupId>junit</groupId>  
 <artifactId>junit</artifactId>  

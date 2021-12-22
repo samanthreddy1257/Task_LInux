@@ -253,14 +253,14 @@
         <pluginManagement>
         <plugins>
             <plugin>
-            <groupId> ----- </groupId>
+            <groupId>org.example</groupId>
             <artifactId>maven-jar-plugin</artifactId> (check your plugin ) 
             <version>3.0.2</version>
             <configuration>
                 <archive>
                     <manifest>
                         <addClasspath>true</addClasspath>
-                        <mainClass> ------ </mainClass>
+                        <mainClass>org.example.App </mainClass>
                     </manifest>
                 </archive>
             </configuration>

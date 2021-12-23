@@ -250,25 +250,22 @@
 </configuration>
 </plugin>
 	<build>
-        <pluginManagement>
-        <plugins>
-            <plugin>
-            <groupId>org.example</groupId>
-		    <mainClass>org.example.App </mainClass>
-            <artifactId>maven-jar-plugin</artifactId> (check your plugin ) 
-            <version>3.0.2</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        
-                    </manifest>
-                </archive>
-            </configuration>
-            </plugin>
-        </plugins>
-        </pluginManagement>
-    </build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-myquery-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <url>http://www.rsystems.com/query</url>
+          <timeout>10</timeout>
+          <options>
+            <option>one</option>
+            <option>two</option>
+            <option>three</option>
+          </options>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </plugins>  
 	  <build>

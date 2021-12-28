@@ -1,58 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example.basicapp</groupId>
-  <artifactId>myapp</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.8</java.version>
-  </properties>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>software.amazon.awssdk</groupId>
-        <artifactId>bom</artifactId>
-        <version>2.5.63</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>software.amazon.awssdk</groupId>
-      <artifactId>s3</artifactId>
-    </dependency>
-
-  </dependencies>
-
-</project>
-
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.example</groupId>
+	<artifactId>MySecondDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MySecondDemo</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.home>/usr/bin/java/bin/javac</java.home>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.1.0</version>
+			<classifier>no_aop</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>2.50.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>22.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client-appengine</artifactId>
+			<version>1.23.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava-jdk5</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>\home\ec2-user\testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<executable>${java.home}</executable>
+					<compilerVersion>1.8</compilerVersion>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<!-- configuration of reports to be included in site -->
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.2</version>
+							<configuration>
+								<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.9</version>
+							<configuration>
+								<overview>${basedir}\src\main\java\overview.html</overview>
+								<verbose>true</verbose>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-report-plugin</artifactId>
+							<version>2.6</version>
+						</plugin>
+						<!-- http://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html -->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-checkstyle-plugin</artifactId>
+							<version>2.13</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<executable>${java.home}</executable>
+					<compilerVersion>1.8</compilerVersion>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-myquery-plugin</artifactId>
+						<version>1.0</version>
+						<configuration>
+							<url>http://www.rsystems.com/query</url>
+							<timeout>10</timeout>
+							<options>
+								<option>one</option>
+								<option>two</option>
+								<option>three</option>
+							</options>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</plugins>
+		<build>
+			<configuration>
+				<verbose>false</verbose>
+				<fork>true</fork>
+				<executable>${JAVA_1_6_HOME}/bin/javac</executable>
+				<compilerVersion>1.6</compilerVersion>
+				<meminitial>256m</meminitial>
+				<source>1.6</source>
+				<target>1.6</target>
+				<!--encoding>UTF-8</encoding-->
+				<maxmem>512m</maxmem>
+			</configuration>
+		</build>
+		<plugin>
+			<groupId>com.github.temyers</groupId>
+			<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+			<version>4.0.0</version>
+			<executions>
+				<execution>
+					<id>generateRunners</id>
+					<phase>generate-test-sources</phase>
+					<goals>
+						<goal>generateRunners</goal>
+					</goals>
+					<configuration>
+						<!-- Mandatory -->
+						<!-- List of package names to scan for glue code. -->
+						<glue>
+							<package>cukes.steps.frameworkshakeout.UI</package>
+							<package>cukes.hooks</package>
+							<package>utilities.hooks</package>
+							<package>cukes.steps.frameworkshakeout.API</package>
+						</glue>
+						<!-- These are optional, with the default values -->
+						<!-- Where to output the generated tests -->
+						<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
+						<!-- The directory, which must be in the root of the runtime classpath, containing your feature files.  -->
+						<featuresDirectory>src/test/resources/features/</featuresDirectory>
+						<!-- Directory where the cucumber report files shall be written  -->
+						<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+						<!-- List of cucumber plugins. When none are provided the json formatter is used. For more
+                         advanced usage see section about configuring cucumber plugins -->
+						<plugins>
+							<plugin>
+								<name>json,html</name>
+							</plugin>
+							<plugin>
+								<name>com.example.CustomHtmlFormatter</name>
+								<extension>html</extension>
+							</plugin>
+						</plugins>
+						<!-- CucumberOptions.strict property -->
+						<strict>true</strict>
+						<!-- CucumberOptions.monochrome property -->
+						<monochrome>true</monochrome>
+						<!-- The tags to run, maps to CucumberOptions.tags property. Default is no tags. -->
+						<tags>
+							<tag>@Web</tag>
+							<tag>@API</tag>
+						</tags>
+						<!-- If set to true, only feature files containing the required tags shall be generated. -->
+						<filterFeaturesByTags>false</filterFeaturesByTags>
+						<!-- Generate TestNG runners instead of JUnit ones. -->
+						<useTestNG>false</useTestNG>
+						<!-- The naming scheme to use for the generated test classes.  One of 'simple' or 'feature-title' -->
+						<namingScheme>simple</namingScheme>
+						<!-- The class naming pattern to use.  Only required/used if naming scheme is 'pattern'.-->
+						<namingPattern>Parallel{c}IT</namingPattern>
+						<!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per scenario.  FEATURE generates a runner per feature. -->
+						<parallelScheme>SCENARIO</parallelScheme>
+						<!-- Specify a custom template for the generated sources (this is a path relative to the project base directory) -->
+						<customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>
+						<!-- Specify a custom package name for generated sources. Default is no package.-->
+						<packageName>com.example</packageName>
+					</configuration>
+				</execution>
+			</executions>
+			<!--The available options are junit, testng, html, pretty, json, usage and rerun -->
+			<name>junit,html,pretty,json</name>
+			<!--Optional file extension. For build in cucumber plugins a sensible default is provided. -->
+			<extension>json</extension>
+			<!--Optional output directory. Overrides cucumberOutputDirectory. Usefull when different
+            plugins create files with the same extension-->
+			<outputDirectory>${project.build.directory}/cucumber-parallel/json</outputDirectory>
+			<name>path.to.my.formaters.NoOutputFormatter</name>
+			<!--Set to true if this plug creates no output. Setting extension or outputDirectory
+            will override this setting -->
+			<noOutput>true</noOutput>
+		</plugin>
+	</plugins>
+</build>undefined</build>undefined<parent>
+<groupId>com.example</groupId>
+<artifactId>example-parent</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<relativePath>../name-of-folder-containing-parent-pom</relativePath>undefined</parent>undefined</project>

@@ -348,7 +348,7 @@
 			<noOutput>true</noOutput>
 		</plugin>
 	</plugins>
-</build>undefined</build>undefined<parent>
+<build>undefined</build>undefined<parent>
 <groupId>com.example</groupId>
 <artifactId>example-parent</artifactId>
 <version>0.0.1-SNAPSHOT</version>

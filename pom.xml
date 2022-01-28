@@ -347,9 +347,9 @@
             will override this setting -->
 			<noOutput>true</noOutput>
 		</plugin>
-	</plugins>
+	<plugins/>
 <build>undefined</build>undefined<parent>
 <groupId>com.example</groupId>
 <artifactId>example-parent</artifactId>
 <version>0.0.1-SNAPSHOT</version>
-<relativePath>../name-of-folder-containing-parent-pom</relativePath>undefined</parent>undefined</project>
+

@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="testpackage.EdgeTest"/>
-      <class name="testpackage.MavenTest1"/>
+     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
